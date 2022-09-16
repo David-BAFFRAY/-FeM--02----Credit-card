@@ -132,7 +132,7 @@
 
     section > form > .form__name,
     section > form > .form__number {
-        width: 100vw;
+        width: 90vw;
         margin: 2vh 0 0 7vw;
     }
 
@@ -194,7 +194,7 @@
         font-size: 5vw;
     }
 
-    section > form > .form__confirm > input{
+    section > form > .form__confirm > button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -462,7 +462,7 @@
         font-size: 1.1vw;
     }
 
-    section > form > .form__confirm > input {
+    section > form > .form__confirm > button {
         display: flex;
         justify-content: center;
         align-items: center;

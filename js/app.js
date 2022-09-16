@@ -1,7 +1,8 @@
+console.log("app.js chargé !");
+
 const app = {
-
     init: function() {
-
+        registercard.init();
     }
 }
 
