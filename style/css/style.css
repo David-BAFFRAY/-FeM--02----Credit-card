@@ -80,6 +80,8 @@
     }
 
     .front__card > .date__card {
+        display: flex;
+        flex-direction: row;
         bottom: 3vh;
         right: 33vw;
         font-size: 3vw;
@@ -98,7 +100,7 @@
         height: 22vh;
     }
 
-    .back__card > .cvv__card {
+    .back__card > .cvc__card {
         position: absolute;
         bottom: 10.5vh;
         right: 35vw;

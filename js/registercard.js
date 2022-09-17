@@ -12,28 +12,28 @@ const registercard = {
         event.preventDefault();
 
         // Take Cardholder name input
-        let inputName = document.querySelector('#name').value;
+        let inputName = document.getElementById('name').value;
 
-        console.log(inputName);
+        let transposeName = document.getElementById('transpose__name').textContent = inputName;
 
         // Take Card number input
-        let inputCardNumber = document.querySelector('#cardNumber').value;
+        let inputCardNumber = document.getElementById('cardNumber').value;
 
-        console.log(inputCardNumber);
+        let transposeNum = document.getElementById('transpose__number').textContent = inputCardNumber;
 
         // Take month number input
-        let inputMonthNumber = document.querySelector('#MMnumber').value;
+        let inputMonthNumber = document.getElementById('MMnumber').value;
 
-        console.log(inputMonthNumber);
+        let transposeMonth = document.getElementById('transpose__month').textContent = inputMonthNumber;
 
         // Take year number input
-        let inputYearNumber = document.querySelector('#YYnumber').value;
+        let inputYearNumber = document.getElementById('YYnumber').value;
 
-        console.log(inputYearNumber);
+        let transposeYear = document.getElementById('transpose__year').textContent = inputYearNumber;
 
         // Take CVC number input
-        let inputCvcNumber = document.querySelector('#CVCnumber').value;
+        let inputCvcNumber = document.getElementById('CVCnumber').value;
 
-        console.log(inputCvcNumber);
+        let transposeCvc = document.getElementById('transpose__cvc').textContent = inputCvcNumber;
     }
 }

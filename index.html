@@ -18,32 +18,34 @@
       <div class="logo__card">
         <svg width="20" height="20" viewBox="0 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
       </div>
-      <div class="number__card">
+      <div id="transpose__number" class="number__card">
         0000 0000 0000 0000
       </div>
-      <div class="name__card">
+      <div id="transpose__name" class="name__card">
         Jane Appleseed
       </div>
       <div class="date__card">
-        00/00
+        <div id="transpose__month">00</div>
+        /
+        <div id="transpose__year">00</div>
       </div>
     </div>
     <div class="back__card">
       <img src="./assets/images/bg-card-back.png" alt="Back credit card">
-      <div class="cvv__card">
+      <div id="transpose__cvc" class="cvc__card">
         000
       </div>
     </div>
   </header>
   <section>
     <form action="" method="">
-        <label class="form__name">
+        <label class="form__name" for="name">
           Cardholder Name
           <input type="text" id="name" placeholder="e.g. Jane Appleseed">
         </label>
-        <label class="form__number">
+        <label class="form__number" for="cardNumber">
           Card Number
-          <input type="number" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000">
+          <input type="text" id="cardNumber" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
         </label>
       <div class="form__bloc">
           <label class="form__date">
@@ -51,12 +53,12 @@
             <input type="number" id="MMnumber" placeholder="MM">
             <input type="number" id="YYnumber" placeholder="YY">
           </label>
-          <label class="form__cvc">
+          <label class="form__cvc" for="CVCnumber">
             CVC
             <input type="number" id="CVCnumber" placeholder="e.g. 123">
           </label>
       </div>
-      <label class="form__confirm">
+      <label class="form__confirm" for="submit">
         <button id="submit" type="submit">Confirm</button>
       </label>
     </form>
