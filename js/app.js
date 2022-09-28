@@ -2,7 +2,10 @@ console.log("app.js chargé !");
 
 const app = {
     init: function() {
-        registercard.init();
+        registerCard.init();
+        restrictionCardName.init();
+        restrictionCardNumber.init();
+        restrictionCvc.init();
     }
 }
 
