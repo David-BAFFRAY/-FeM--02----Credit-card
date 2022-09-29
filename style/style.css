@@ -1,6 +1,10 @@
 /* ============== Variable CSS ============== */
 
 :root {
+    --main-font-family: Space Grotesk;
+    --main-font-size-mobile: 3vw;
+    --main-font-size-tablet: 2vw;
+    --main-font-size-desktop: 1vw;
     --font-bold: 700;
     --error-color: red;
     --background-button: rgb(34,8,48);
@@ -72,7 +76,7 @@
     .front__card > .name__card,
     .front__card > .date__card {
         position: absolute;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
     }
 
 
@@ -119,7 +123,7 @@
         position: absolute;
         bottom: 10vh;
         right: 37.5vw;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 4vw;
     }
 
@@ -131,12 +135,10 @@
         font-size: .9em;
     }
 
-    .form__name > .error {
-        margin: 0 0 1em 2.1em;
-    }
-
-    .form__number > .error {
-        margin: 0 0 1em 2.1em;
+    .form__name > div > .error,
+    .form__number > div > .error {
+        width: 85%;
+        margin: 0 0 1em 2.8em;
     }
 
     .success {
@@ -168,9 +170,9 @@
     section > form > #partial__form > .form__bloc > .form__date,
     section > form > #partial__form >.form__bloc > .form__cvc,
     section > form > #partial__form > .form__confirm {
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 3vw;
+        font-size: var(--main-font-size-mobile);
         letter-spacing: .2em;
         text-transform: uppercase;
     }
@@ -181,8 +183,8 @@
         margin-left: 6.5vw;
     }
 
-    section > form > #partial__form > .form__name > input,
-    section > form > #partial__form > .form__number > input {
+    section > form > #partial__form > .form__name > div > input,
+    section > form > #partial__form > .form__number > div > input {
         width: 83vw;
         height: 3em;
         border: 1px solid rgb(120, 120, 120);
@@ -191,12 +193,12 @@
         padding-left: 3vw;
     }
 
-    section > form > #partial__form > .form__name > input::placeholder,
-    section > form > #partial__form > .form__number > input::placeholder {
+    section > form > #partial__form > .form__name > div > input::placeholder,
+    section > form > #partial__form > .form__number > div > input::placeholder {
         color: rgb(158, 158, 158);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 5vw;
+        font-size: var(--main-font-size-mobile);
     }
 
     section > form > #partial__form > .form__bloc {
@@ -218,7 +220,7 @@
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input,
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         border: 1px solid rgb(120, 120, 120);
         border-radius: 7px;
         margin: .5em 0 .5em 0;
@@ -230,17 +232,17 @@
         height: 3em;
     }
 
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         width: 25.2vw;
         height: 3em;
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input::placeholder,
-    section > form > #partial__form > .form__bloc > .form__cvc > input::placeholder {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input::placeholder {
         color: rgb(158, 158, 158);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 5vw;
+        font-size: var(--main-font-size-mobile);
     }
 
     section > form > #partial__form > .form__confirm > button {
@@ -251,8 +253,8 @@
         height: 7vh;
         border: none;
         border-radius: 7px;
-        font-family: Space Grotesk;
-        font-size: 5.5vw;
+        font-family: var(--main-font-family);
+        font-size: 5vw;
         color: white;
         background-color: var(--background-button);
         margin: 2vh auto 0 auto;
@@ -264,43 +266,53 @@
         justify-content: center;
         align-items: center;
         width: 100vw;
-        height: 45vh;
+        height: 55vh;
+        margin-top: -9vh;
     }
 
-    form > #confirm__bloc > svg {
-        margin: 0 38vw 3vh 38vw;
+    section > form > #confirm__bloc > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    form > #confirm__bloc > h2 {
-        font-family: Space Grotesk;
+    section > form > #confirm__bloc > div > svg {
+        width: 23vw;
+        height: 23vh;
+        margin-bottom: 10%;
+    }
+
+    form > #confirm__bloc > div > h2 {
+        font-family: var(--main-font-family);
         font-weight: bolder;
         text-transform: uppercase;
-        font-size: 10vw;
+        font-size: 8vw;
         text-align: center;
         margin: 0 auto 5vh auto;
     }
 
-    form > #confirm__bloc > span {
-        font-family: Space Grotesk;
+    form > #confirm__bloc > div > span {
+        font-family: var(--main-font-family);
         font-weight: bolder;
         font-size: 5vw;
         margin: 0 12vw 0 12vw;
         color: rgb(118, 118, 118);
     }
 
-    form > #confirm__bloc > button {
+    form > #confirm__bloc > div > button {
         width: 88vw;
         height: 2em;
         margin: 6vh 6vw 0 6vw;
         border: none;
         border-radius: 10px;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 5.5vw;
         color: white;
         background-color: var(--background-button);
     }
 
-    form > #confirm__bloc > button > a {
+    form > #confirm__bloc > div > button > a {
         text-decoration: none;
         color: white;
     }
@@ -310,7 +322,7 @@
     }
 
     .attribution {
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 4vw;
         text-align: center;
     }
@@ -386,7 +398,7 @@
     .front__card > .name__card,
     .front__card > .date__card {
         position: absolute;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
     }
 
 
@@ -433,7 +445,7 @@
         position: absolute;
         bottom: 10vh;
         right: 55vw;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 2.5vw;
     }
 
@@ -441,16 +453,14 @@
 /* =========== This is for invalid and valid fields style =========== */
 
     .error {
-        color: var(--color-error);
+        color: var(--error-color);
         font-size: .9em;
     }
 
-    .form__name > .error {
-        margin: 0 0 1em 2.1em;
-    }
-
-    .form__number > .error {
-        margin: 0 0 1em 2.1em;
+    .form__name > div > .error,
+    .form__number > div > .error {
+        width: 85%;
+        margin: 0 0 1em 1.8em;
     }
 
     .success {
@@ -465,7 +475,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 75vw;
+        width: 100vw;
         height: auto;
         margin: 9em auto 0 auto;
         overflow: hidden;
@@ -483,9 +493,9 @@
     section > form > #partial__form > .form__bloc > .form__date,
     section > form > #partial__form >.form__bloc > .form__cvc,
     section > form > #partial__form > .form__confirm {
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 2vw;
+        font-size: var(--main-font-size-tablet);
         letter-spacing: .2em;
         text-transform: uppercase;
     }
@@ -496,8 +506,8 @@
         margin-left: 2.8vw;
     }
 
-    section > form > #partial__form > .form__name > input,
-    section > form > #partial__form > .form__number > input {
+    section > form > #partial__form > .form__name > div > input,
+    section > form > #partial__form > .form__number > div > input {
         width: 70vw;
         height: 4em;
         border: 1px solid rgb(120, 120, 120);
@@ -506,12 +516,12 @@
         padding-left: 3vw;
     }
 
-    section > form > #partial__form > .form__name > input::placeholder,
-    section > form > #partial__form > .form__number > input::placeholder {
+    section > form > #partial__form > .form__name > div > input::placeholder,
+    section > form > #partial__form > .form__number > div > input::placeholder {
         color: rgb(158, 158, 158);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 2.5vw;
+        font-size: var(--main-font-size-tablet);
     }
 
     section > form > #partial__form > .form__bloc {
@@ -532,7 +542,7 @@
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input,
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         border: 1px solid rgb(120, 120, 120);
         border-radius: 7px;
         margin: .5em 0 .5em 0;
@@ -544,17 +554,17 @@
         height: 4em;
     }
 
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         width: 28vw;
         height: 4em;
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input::placeholder,
-    section > form > #partial__form > .form__bloc > .form__cvc > input::placeholder {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input::placeholder {
         color: rgb(158, 158, 158);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 2.5vw;
+        font-size: var(--main-font-size-tablet);
     }
 
     section > form > #partial__form > .form__confirm > button {
@@ -565,7 +575,7 @@
         height: 7vh;
         border: none;
         border-radius: 7px;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 3vw;
         color: white;
         background-color: var(--background-button);
@@ -578,53 +588,61 @@
         justify-content: center;
         align-items: center;
         width: 100vw;
-        height: 45vh;
+        height: 43vh;
+        margin-top: -2vh;
     }
 
-    form > #confirm__bloc > svg {
-        margin: 0 43vw 3vh 43vw;
+    section > form > #confirm__bloc > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    form > #confirm__bloc > h2 {
-        font-family: Space Grotesk;
+    section > form > #confirm__bloc > div > svg {
+        width: 15vw;
+        height: 15vh;
+        margin-bottom: 10%;
+    }
+
+    form > #confirm__bloc > div > h2 {
+        font-family: var(--main-font-family);
         font-weight: bolder;
         text-transform: uppercase;
         font-size: 5vw;
-        text-align: center;
-        margin: 0 auto 5vh auto;
+        margin: 0 auto 3vh auto;
     }
 
-    form > #confirm__bloc > span {
-        font-family: Space Grotesk;
+    form > #confirm__bloc > div > span {
+        font-family: var(--main-font-family);
         font-weight: bolder;
         font-size: 3vw;
-        margin: 0 29vw 0 29vw;
         color: rgb(118, 118, 118);
     }
 
-    form > #confirm__bloc > button {
-        width: 65vw;
+    form > #confirm__bloc > div > button {
+        width: 65%;
         height: 6vh;
-        margin: 6vh 6vw 0 18vw;
+        margin: 5vh auto 0 auto;
         border: none;
         border-radius: 10px;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 3vw;
         color: white;
         background-color: var(--background-button);
     }
 
-    form > #confirm__bloc > button > a {
+    form > #confirm__bloc > div > button > a {
         text-decoration: none;
         color: white;
     }
 
     footer {
-        margin-top: 3vh;
+        margin-top: 8vh;
     }
 
     .attribution {
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 3vw;
         text-align: center;
     }
@@ -650,7 +668,6 @@
             "head bod"
             "head foot";
         overflow: hidden;
-        border: 1px solid #000;
     }
 
     body > header {
@@ -698,7 +715,7 @@
     .front__card > .name__card,
     .front__card > .date__card {
         position: absolute;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
     }
 
 
@@ -706,7 +723,7 @@
         bottom: 8vh;
         left: 2vw;
         width: 100vw;
-        word-spacing: 1vw;
+        word-spacing: 1.2vw;
         font-size: 1.4vw;
     }
 
@@ -741,7 +758,7 @@
         position: absolute;
         bottom: 11.9vh;
         right: 2.5vw;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: .9vw;
     }
  
@@ -757,29 +774,19 @@
 /* =========== This is for invalid and valid fields style =========== */
 
 .error {
-    color: var(--color-error);
+    color: var(--error-color);
     font-size: .9em;
 }
 
-.form__name > .error,
-.form__number > .error {
-    width: 22vw;
-    margin: .5em 0 1em 2.1em;
-    text-align: center;
+.form__name > div > .error,
+.form__number > div > .error,
+.form__cvc > div > .error {
+    width: 85%;
+    margin: .5em 0 1em 0;
 }
 
-.form__date > div > .error {
-    margin-left: 1vw;
-}
-
-.form__cvc > .error {
-    width: 9.5vw;
-    margin: .5em 0 0 2.1em;
-    text-align: center;
-}
-
-.success {
-    color: rgb(0, 0, 0);
+.success > div > input{
+    border: green;
     font-size: .6em;
 }
 
@@ -787,7 +794,7 @@
 
     section > form {
         width: 25vw;
-        height: 43vh;
+        height: 46.5vh;
     }
 
     section > form > #partial__form > .form__name,
@@ -797,9 +804,9 @@
     section > form > #partial__form > .form__confirm {
         display: flex;
         flex-direction: column;
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: bolder;
-        font-size: 1vw;
+        font-size: var(--main-font-size-desktop);
         font-weight: var(--font-bold);
         text-transform: uppercase;
     }
@@ -810,30 +817,30 @@
         margin-bottom: 1vh;
     }
 
-    section > form > #partial__form > .form__name > input,
-    section > form > #partial__form > .form__number > input {
+    section > form > #partial__form > .form__name > div > input,
+    section > form > #partial__form > .form__number > div > input {
         border: 1px solid rgb(120, 120, 120);
         border-radius: 7px;
         padding-left: 1vw;
         margin-top: 1vh;
     }
 
-    section > form > #partial__form > .form__name > input {
+    section > form > #partial__form > .form__name > div > input {
         width: 23.8vw;
         height: 5.5vh;
     }
 
-    section > form > #partial__form > .form__number > input {
+    section > form > #partial__form > .form__number > div > input {
         width: 23.8vw;
         height: 5.5vh;
     }
 
-    section > form > #partial__form > .form__name > input::placeholder,
-    section > form > #partial__form > .form__number > input::placeholder {
+    section > form > #partial__form > .form__name > div > input::placeholder,
+    section > form > #partial__form > .form__number > div > input::placeholder {
         color: rgb(156, 156, 156);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 1.1vw;
+        font-size: var(--main-font-size-desktop);
     }
 
     section > form > #partial__form > .form__bloc {
@@ -861,7 +868,7 @@
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input,
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         border: 1px solid rgb(120, 120, 120);
         border-radius: 7px;
         margin-top: 1vh;
@@ -874,18 +881,18 @@
         height: 5.5vh;
     }
 
-    section > form > #partial__form > .form__bloc > .form__cvc > input {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input {
         min-width: 12vw;
         max-width: 12vw;
         height: 5.5vh;
     }
 
     section > form > #partial__form > .form__bloc > .form__date > div > input::placeholder,
-    section > form > #partial__form > .form__bloc > .form__cvc > input::placeholder {
+    section > form > #partial__form > .form__bloc > .form__cvc > div > input::placeholder {
         color: rgb(156, 156, 156);
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-weight: var(--font-bold);
-        font-size: 1.1vw;
+        font-size: var(--main-font-size-desktop);
     }
 
     section > form > #partial__form > .form__confirm > button {
@@ -896,28 +903,30 @@
         height: 7vh;
         border: none;
         border-radius: 7px;
-        font-family: Space Grotesk;
-        font-size: 1.2vw;
+        font-family: var(--main-font-family);
+        font-size: var(--main-font-size-desktop);
         color: white;
         background-color: var(--background-button);
-        margin: 4vh auto 0 auto;
+        margin-top: 1vh;
     }
 
     section > form > #confirm__bloc {
         display: none;
+    }
+
+    section > form > #confirm__bloc > div {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 25vw;
-        height: 44.4vh;
     }
 
-    section > form > #confirm__bloc > svg {
-        margin: 0 10vw 2vh 10vw;
+    section > form > #confirm__bloc > div > svg {
+        margin-bottom: 10%;
     }
 
-    section > form > #confirm__bloc > h2 {
-        font-family: Space Grotesk;
+    section > form > #confirm__bloc > div > h2 {
+        font-family: var(--main-font-family);
         font-weight: bolder;
         text-transform: uppercase;
         text-align: center;
@@ -925,28 +934,27 @@
         margin-bottom: 3vh;
     }
 
-    section > form > #confirm__bloc > span {
-        font-family: Space Grotesk;
+    section > form > #confirm__bloc > div > span {
+        width: 75%;
+        font-family: var(--main-font-family);
         font-weight: bolder;
         font-size: 1vw;
         text-align: center;
         color: rgb(118, 118, 118);
-        margin: 0 5.3vw;
     }
 
-    section > form > #confirm__bloc > button {
+    section > form > #confirm__bloc > div > button {
         width: 25vw;
         height: 7vh;
-        margin: 8vh auto 0 auto;
+        margin-top: 8vh;
         border: none;
         border-radius: 7px;
-        font-family: Space Grotesk;
-        font-size: 1.2vw;
-        color: white;
         background-color: var(--background-button);
     }
 
-    form > #confirm__bloc > button > a {
+    form > #confirm__bloc > div > button > a {
+        font-family: var(--main-font-family);
+        font-size: 1.2vw;
         text-decoration: none;
         color: white;
     }
@@ -957,7 +965,7 @@
     }
 
     .attribution {
-        font-family: Space Grotesk;
+        font-family: var(--main-font-family);
         font-size: 1vw;
         text-align: center;
     }

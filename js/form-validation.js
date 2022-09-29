@@ -7,6 +7,8 @@ const cardMonth = document.getElementById('monthNumber');
 const cardYear = document.getElementById('yearNumber');
 const cvcNumber = document.getElementById('cvcNumber');
 
+// This event allows you to space out the groups of numbers beyond 4 digits
+
 cardNumber.addEventListener('keyup', function(e) {
     if(e.key != 'Backspace' && (cardNumber.value.length === 4 || cardNumber.value.length === 9 || cardNumber.value.length === 14)) {
         cardNumber.value += ' ';
@@ -16,9 +18,13 @@ cardNumber.addEventListener('keyup', function(e) {
 form.addEventListener('submit', event => {
     event.preventDefault();
 
+    // This function will control the different inputs.
+
     validateInputs();
 
 });
+
+//! This function will give an error if the input does not match the regex.
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -37,6 +43,8 @@ const setSuccess = element => {
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
 };
+
+//! Different regex depending on the input.
 
 const isValidName = cardName => {
     const regExp = /^[A-Z]{1}[aA-zZ]+[ ]{1}[A-Z]{1}[aA-zZ]+$/;
@@ -63,7 +71,12 @@ const isValidCvc = cardCvc => {
     return regExp.test(String(cardCvc));
 };
 
+//! This function will check each input via conditions and return an error via setError, and if ok, we display the confirmation.
+
 const validateInputs = () => {
+    let currentYear = new Date().toJSON().slice(2, 4);
+    let currentMonth = new Date().toJSON().slice(5, 7);
+
     const nameValue = cardName.value.trim();
     const cardValue = cardNumber.value.trim();
     const monthValue = cardMonth.value.trim();
@@ -76,7 +89,7 @@ const validateInputs = () => {
 
     } else if (!isValidName(nameValue)) {
         
-        setError(cardName, 'The first letter of your first and last name must be capitalized.');
+        setError(cardName, 'The first letter of your name and surname must be capitalized, without accent and no numbers are accepted.');
 
     } else {
 
@@ -122,6 +135,14 @@ const validateInputs = () => {
 
         setSuccess(cardYear);
     };
+
+    //? Checks if the month and year are not lower than the current date
+
+    if((monthValue < currentMonth) && (yearValue < currentYear)) {
+        setError(cardMonth, 'Your validation date is wrong.');
+    } else {
+        setSuccess(cardMonth);
+    }
     
     if(cvcValue === '') {
 
